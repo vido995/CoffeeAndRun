@@ -1,0 +1,454 @@
+html, body {
+  font-size: 10px;
+}
+
+body {
+  height: 100%;
+  font-weight: normal;
+  font-variant: normal;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5em;
+  color: #767676;
+  margin: 0;
+}
+
+ul, ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+a {
+  color: #0070ba;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, .headline {
+  font-weight: 300;
+  color: #2c2e2f;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+h1, h2, .x-large {
+  letter-spacing: .02em;
+}
+
+h2, .x-large {
+  font-size: 40px;
+  font-size: 2.857rem;
+  line-height: 1.25em;
+}
+
+h1, h2, h3, h4, h5, h6, .headline {
+  font-family: "pp-sans-big-light",Helvetica Neue,Arial,sans-serif;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1.25;
+}
+
+p {
+  padding-top: 4px;
+  padding-bottom: 14px;
+  margin: 0;
+  font-size: 15px;
+  font-size: 1.071rem;
+  line-height: 1.5em;
+  color: #2c2e2f;
+}
+
+.car-header {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  max-height: 23rem;
+  transition: height .3s ease-out;
+  font-weight: bold;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 7.2rem;
+}
+
+.car-header:before {
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 8.4rem;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0) 100%);
+  top: 0;
+  z-index: -1;
+}
+
+.car-header:after {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 7.2rem;
+}
+
+@keyframes headerclose {
+  0% {
+    background-color:#009cde;
+    background-image:radial-gradient(circle farthest-side at center bottom, #009cde, #003087 125%)
+  }
+  40% {
+    background-color:#009cde;
+    background-image:radial-gradient(circle farthest-side at center bottom, #009cde, #003087 125%)
+  }
+  50% {
+    background-image:radial-gradient(circle farthest-side at left top, rgba(0,156,222,0.5), rgba(0,48,135,0.75) 125%)
+  }
+  65% {
+    background-image:radial-gradient(circle farthest-side at left top, rgba(0,156,222,0.65), rgba(0,48,135,0.5) 125%)
+  }
+  80% {
+    background-image:radial-gradient(circle farthest-side at left top, rgba(0,156,222,0.3), rgba(0,48,135,0.25) 125%)
+  }
+  90% {
+    background-image:radial-gradient(circle farthest-side at left top, rgba(0,156,222,0.1), rgba(0,0,0,0.05) 125%)
+  }
+  100% {
+    background-image:none
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 5px rgba(255,255,255,0);
+  }
+  100% {
+    box-shadow: 0 0 0 5px rgba(255,255,255,0.5);
+  }
+}
+
+.car-header > div {
+  -webkit-animation: headerclose .4s steps(10, end) 1 300ms 0 ease;
+  -moz-animation: headerclose .4s steps(10, end) 1 300ms 0 ease;
+  -ms-animation: headerclose .4s steps(10, end) 1 300ms 0 ease;
+  -webkit-animation: headerclose .4s steps(10, end) 1;
+  -moz-animation: headerclose .4s steps(10, end) 1;
+  animation: headerclose .4s steps(10, end) 1;
+  background-image: none;
+  height: inherit;
+}
+
+.car-header div .car-logo {
+  background: transparent url("images/image.png") center center no-repeat;
+  background-size: contain;
+  height: 10rem;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: -2.5rem;
+  width: 13.6rem;
+  display: block;
+  text-indent: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.main-menu {
+  background: none;
+  border-right: none;
+  min-height: 0;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  width: 100%;
+  padding-left: 0;
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  padding-top: 2.8rem;
+  top: 0;
+}
+
+.main-menu ul {
+  margin: 0;
+  text-align: center;
+}
+
+.main-menu > ul > li {
+  display: inline-block;
+}
+
+.main-menu > ul > li > a {
+  padding: 2.5rem;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 2.7;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.main-menu > ul > li > a:hover {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+}
+
+.container-centered {
+  height: inherit;
+  min-width: auto;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: content-box;
+  min-width: 940px;
+  max-width: 1150px;
+}
+
+.main {
+  padding-top: 0;
+  -webkit-transition: padding-top .3s ease-out;
+  -moz-transition: padding-top .3s ease-out;
+  -ms-transition: padding-top .3s ease-out;
+  transition: padding-top .3s ease-out;
+}
+
+.twin-hero {
+  height: 580px;
+  background-color: black;
+  padding-top: 0 !important;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.row-fluid {
+  background: #fff;
+  position: relative;
+  z-index: 2;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate(0, 0);
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.twin-hero .hero-shadow {
+  position: absolute;
+  z-index: 40;
+  width: 100%;
+  height: 72px;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.07));
+}
+
+.twin-hero .hero-container {
+  width: 100%;
+  height: 100%;
+}
+
+.twin-hero .left-hero {
+  position: absolute;
+  z-index: 20;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: transform .8s;
+  transition: transform .8s;
+  width: 85%;
+  height: 100%;
+  top: 0;
+  transform: skewX(-10deg);
+  -moz-transform: skewX(-10deg);
+  -webkit-transform: skewX(-10deg);
+  left: -35%;
+  box-shadow: 1px 0 10px rgba(0,0,0,0.7);
+}
+
+.twin-hero .left-hero .left-hero-tilt {
+  width: 100%;
+  height: 100%;
+  margin-left: 15%;
+  background: url(https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/consumer-desktop-hero.jpg) no-repeat center center;
+  background-size: cover;
+  transform: skewX(10deg);
+  -moz-transform: skewX(10deg);
+  -webkit-transform: skewX(10deg);
+  -webkit-transition: transform .8s;
+  transition: transform .8s;
+}
+
+.twin-hero .left-hero .left-hero-tilt:before {
+  content: "";
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,48,135,0.7), rgba(0,156,222,0.7));
+  opacity: 0;
+}
+
+.twin-hero .hero-container .side-container {
+  padding-top: 72px;
+  width: 80%;
+  max-width: 1300px;
+  height: 80%;
+  position: relative;
+}
+
+.twin-hero .left-hero .left-hero-tilt .side-container {
+  float: right;
+}
+
+.twin-hero .hero-container .active {
+  border-bottom: none;
+}
+
+.twin-hero .hero-container .initial {
+  position: absolute;
+  width: 400px;
+  padding-top: 130px;
+  height: auto;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  opacity: 0;
+}
+
+.twin-hero .hero-container .initial.active {
+  opacity: 1;
+}
+
+.twin-hero .left-hero .left-hero-tilt .side-container .initial {
+  right: 30%;
+}
+
+.twin-hero .hero-container h2, .twin-hero .hero-container p {
+  color: #fff;
+}
+
+.twin-hero .hero-container p {
+  font-size: 20px;
+  font-size: 1.42857143rem;
+}
+
+.twin-hero .hero-container .round-icon {
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  line-height: 52px;
+  padding: 0;
+  margin-top: 10px;
+  cursor: pointer;
+  animation-duration: 1.6s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.twin-hero .right-hero {
+  width: 85%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -25%;
+  z-index: 10;
+  -webkit-transition: transform .8s;
+  transition: transform .8s;
+  transform: translateX(-8%);
+  -moz-transform: translateX(-8%);
+  -webkit-transform: translateX(-8%);
+}
+
+.twin-hero .right-hero .right-hero-tilt {
+  width: 100%;
+  height: 100%;
+  background: url(https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/merchant-desktop-hero.jpg) no-repeat center center;
+  background-size: cover;
+  -webkit-transition: transform .8s;
+  transition: transform .8s;
+}
+
+.twin-hero .right-hero .right-hero-tilt .side-container .initial {
+  left: 35%;
+}
+
+.twin-hero .hero-container .collapsed {
+  position: absolute;
+  width: 300px;
+  padding-top: 160px;
+  height: auto;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  opacity: 0;
+}
+
+.twin-hero .hero-container .collapsed.active {
+  opacity: 1;
+}
+
+html:not([data-device-type="mobile"]) .twin-hero .left-hero .left-hero-tilt .side-container .collapsed {
+  right: 25%;
+}
+
+.twin-hero .right-hero .right-hero-tilt .side-container .collapsed {
+  left: 25%;
+}
+
+.twin-hero .hero-container .round-filled-icon {
+  display: inline-block;
+  background: #fff;
+  font-size: 40px;
+  color: #009cde;
+  border-radius: 30px;
+  -moz-background-clip: content;
+  -webkit-background-clip: content;
+  background-clip: content-box;
+  width: 50px;
+  height: 50px;
+  line-height: 52px;
+  padding: 0;
+  margin-top: 10px;
+  cursor: default;
+  animation-duration: 1.6s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.twin-hero .left-hero.left-hero-expanded {
+  transform: skewX(-10deg) translateX(25%);
+  -moz-transform: skewX(-10deg) translateX(25%);
+  -webkit-transform: skewX(-10deg) translateX(25%);
+}
+.twin-hero .left-hero.left-hero-collapsed {
+  transform: skewX(-10deg) translateX(-25%);
+  -moz-transform: skewX(-10deg) translateX(-25%);
+  -webkit-transform: skewX(-10deg) translateX(-25%);
+}
+
+.twin-hero .right-hero.right-hero-expanded {
+  transform: translateX(-25%);
+  -moz-transform: translateX(-25%);
+  -webkit-transform: translateX(-25%);
+}
+
+.twin-hero .right-hero.right-hero-collapsed {
+  transform: translateX(25%);
+  -moz-transform: translateX(25%);
+  -webkit-transform: translateX(25%);
+}
