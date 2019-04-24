@@ -25,11 +25,27 @@ class Main extends React.Component {
                                             Amet voluptate consectetur anim do est do ut in ad.
                                             Amet voluptate consectetur anim
                                         </p>
-                                        <span className="round-icon"  onClick={() => this.setState({customerState: "expanded", bussinessState: "collapsed"})}>&rarr;</span>
+                                        <span className="round-icon"  onClick={() => this.setState({customerState: "expanded", bussinessState: "collapsed"})}>&#8680;</span>
                                     </div>
                                     <div className={"collapsed " + (this.state.customerState === "collapsed" ? "active" : "")}>
                                         <h2>Customers</h2>
-                                        <span className="round-filled-icon" onClick={() => this.setState({customerState: "initial", bussinessState: "initial"})}>&rarr;</span>
+                                        <span className="round-filled-icon" onClick={() => this.setState({customerState: "initial", bussinessState: "initial"})}>&#8680;</span>
+                                    </div>
+                                    <div className={"expanded " + (this.state.customerState === "expanded" ? "active" : "")}>
+                                        <h2>Personal</h2>
+                                        <p>Amet voluptate consectetur anim do est do ut in ad.</p>
+                                        <div className="hero-twin-items">
+                                            <div className="hero-twin-item">
+                                                <i className="fas fa-check-circle fa-5x"></i>
+                                                <p>Send money to friends and family or move funds from one account to another.*</p>
+                                            </div>
+                                            <div className="hero-twin-item">
+                                                <p>Expand your payment options with our credit, debit, prepaid cards &amp; PayPal Credit.**</p>
+                                            </div>
+                                            <div className="hero-twin-item">
+                                                <p>Check out faster, at any of the millions of sites PayPal is accepted.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -43,11 +59,14 @@ class Main extends React.Component {
                                             Amet voluptate consectetur anim do est do ut in ad.
                                             Amet voluptate consectetur anim
                                         </p>
-                                        <span className="round-icon" onClick={() => this.setState({customerState: "collapsed", bussinessState: "expanded"})}>&larr;</span>
+                                        <span className="round-icon" onClick={() => this.setState({customerState: "collapsed", bussinessState: "expanded"})}>&#8678;</span>
                                     </div>
                                     <div className={"collapsed " + (this.state.bussinessState === "collapsed" ? "active" : "")}>
                                         <h2>Bussiness</h2>
-                                        <span className="round-filled-icon" onClick={() => this.setState({customerState: "initial", bussinessState: "initial"})}>&larr;</span>
+                                        <span className="round-filled-icon" onClick={() => this.setState({customerState: "initial", bussinessState: "initial"})}>&#8678;</span>
+                                    </div>
+                                    <div className={"expanded " + (this.state.bussinessState === "expanded" ? "active" : "")}>
+                                        <div>RASIRENO</div>
                                     </div>
                                 </div>
                             </div>
