@@ -22,20 +22,45 @@ var slider = new Swiper ('.swiper-container', {
 class App extends React.Component {
     componentDidMount() {
         window.addEventListener('popstate', this.handleScroll);
+        if (window.performance) {
+            if (performance.navigation.type == 1) {
+                window.location.href = '#sectionOne';
+            } else {
+                window.location.href = '#sectionOne';
+            }
+            let dot = document.getElementsByClassName('Navigation-Anchor')[0];
+            console.log(dot)
+            dot.classList.add('active');
+        }
     }
 
     handleScroll() {
             let container = document.getElementsByClassName('workflow-container')[0];
             let items = document.getElementsByClassName('workflow-items-left')[0];
-            console.log(window.pageYOffset >= container.offsetTop)
+            let itemsRight = document.getElementsByClassName('workflow-items-right')[0];
+
             if (items.classList.value.includes('opacity-no') && window.location.href.includes('sectionTwo')) {
                 items.classList.remove('opacity-no');
+                itemsRight.classList.remove('opacity-no');
+
+                
+                items = document.getElementsByClassName('workflow-items-left-container')[0];
+                itemsRight = document.getElementsByClassName('workflow-items-right-container')[0];
+
+                let headerLeft = document.getElementsByClassName('workflow-header-left')[0];
+                headerLeft.classList.add('workflow-header-left--animated');
+
+                let headerRight = document.getElementsByClassName('workflow-header-right')[0];
+                headerRight.classList.add('workflow-header-right--animated');
+
                 let item = items.getElementsByClassName('workflow-item');
-                let arrowRight = items.getElementsByClassName('workflow-arrow-right');
                 item[0].classList.add('workflow-item--first');
                 let itemText = item[0].getElementsByClassName('workflow-item-text')[0];
                 itemText.classList.add('workflow-item-text--first');
+
+                let arrowRight = items.getElementsByClassName('workflow-arrow-right');
                 arrowRight[0].classList.add('workflow-arrow-right--first');
+
                 item[1].classList.add('workflow-item--second');
                 itemText = item[1].getElementsByClassName('workflow-item-text')[0];
                 itemText.classList.add('workflow-item-text--second');
@@ -43,6 +68,27 @@ class App extends React.Component {
                 itemText = item[2].getElementsByClassName('workflow-item-text')[0];
                 itemText.classList.add('workflow-item-text--3');
                 arrowRight[1].classList.add('workflow-arrow-right--2');
+                arrowRight[2].classList.add('workflow-arrow-right--3');
+
+                
+                let itemRight = itemsRight.getElementsByClassName('workflow-item');
+
+                itemRight[2].classList.add('workflow-item--1');
+                let itemTextRight = itemRight[2].getElementsByClassName('workflow-item-text')[0];
+                itemTextRight.classList.add('workflow-item-text--1');
+
+                itemRight[1].classList.add('workflow-item--2');
+                itemTextRight = itemRight[1].getElementsByClassName('workflow-item-text')[0];
+                itemTextRight.classList.add('workflow-item-text--2');
+
+                itemRight[0].classList.add('workflow-item--3');
+                itemTextRight = itemRight[0].getElementsByClassName('workflow-item-text')[0];
+                itemTextRight.classList.add('workflow-item-text--3');
+
+                let arrowLeft = itemsRight.getElementsByClassName('workflow-arrow-left');
+                arrowLeft[2].classList.add('workflow-arrow-left--1');
+                arrowLeft[1].classList.add('workflow-arrow-left--2');
+                arrowLeft[0].classList.add('workflow-arrow-left--3');
             }
     }
 

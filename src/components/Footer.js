@@ -20,7 +20,7 @@ class Footer extends React.Component {
                                 <div className="side-container">
                                     <div className={"initial " + (this.state.customerState === "initial" ? "active" : "")}>
                                         <h2>CnR za tebe</h2>
-                                        <p>Amet voluptate consectetur anim do est do ut in</p>
+                                        {/* <p>Amet voluptate consectetur anim do est do ut in</p> */}
                                         <span className="round-icon"  onClick={() => this.setState({customerState: "expanded", bussinessState: "collapsed"})}>&#8680;</span>
                                     </div>
                                     <div className={"collapsed " + (this.state.customerState === "collapsed" ? "active" : "")}>
@@ -29,7 +29,7 @@ class Footer extends React.Component {
                                     </div>
                                     <div className={"expanded " + (this.state.customerState === "expanded" ? "active" : "")}>
                                         <h2>CnR za tebe</h2>
-                                        <p>Amet voluptate consectetur anim do est do ut in</p>
+                                        {/* <p>Amet voluptate consectetur anim do est do ut in</p> */}
                                         <div className="hero-twin-items">
                                             <div className="hero-twin-item">
                                                 <i className="fas fa-clock fa-5x"></i>
@@ -66,7 +66,7 @@ class Footer extends React.Component {
                                 <div className="side-container">
                                     <div className={"initial " + (this.state.bussinessState === "initial" ? "active" : "")}>
                                         <h2>CnR za kafiće</h2>
-                                        <p>Amet voluptate consectetur anim do est do ut in</p>
+                                        {/* <p>Amet voluptate consectetur anim do est do ut in</p> */}
                                         <span className="round-icon" onClick={() => this.setState({customerState: "collapsed", bussinessState: "expanded"})}>&#8678;</span>
                                     </div>
                                     <div className={"collapsed " + (this.state.bussinessState === "collapsed" ? "active" : "")}>
@@ -75,7 +75,7 @@ class Footer extends React.Component {
                                     </div>
                                     <div className={"expanded " + (this.state.bussinessState === "expanded" ? "active" : "")}>
                                         <h2>CnR za kafiće</h2>
-                                        <p>Amet voluptate consectetur anim do est do ut in</p>
+                                        {/* <p>Amet voluptate consectetur anim do est do ut in</p> */}
                                         <div className="hero-twin-items" style={{marginLeft: 0}}>
                                             <div className="hero-twin-item">
                                                 <i className="fas fa-money-bill-wave fa-5x"></i>
@@ -102,6 +102,15 @@ class Footer extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <footer>
+                        <div className="social-media">
+                            <div className="social-media-container">
+                                <i className="fab fa-facebook-square fa-2x" style={{fontSize: '2.25' + 'em'}}></i>
+                                <i className="fab fa-instagram" style={{fontSize: '2.25' + 'em', marginLeft: '2' + 'rem'}}></i>
+                                <i className="fab fa-twitter" style={{fontSize: '2.25' + 'em', marginLeft: '2' + 'rem'}}></i>
+                            </div>
+                        </div>
+                    </footer>
                 </section>
             </div>
         )

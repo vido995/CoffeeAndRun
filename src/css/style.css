@@ -221,7 +221,7 @@ p {
 }
 
 .twin-hero {
-  height: 550px;
+  height: 100vh;
   background-color: black;
   padding-top: 0 !important;
   width: 100%;
@@ -318,7 +318,7 @@ p {
 
 .twin-hero .hero-container .initial {
   position: absolute;
-  width: 400px;
+  width: 430px;
   padding-top: 130px;
   height: auto;
   -webkit-transition: opacity .2s;
@@ -357,7 +357,7 @@ p {
   border-radius: 30px;
   width: 50px;
   height: 50px;
-  line-height: 45px;
+  line-height: 44px;
   padding: 0;
   margin-top: 10px;
   cursor: pointer;
@@ -428,7 +428,7 @@ html:not([data-device-type="mobile"]) .twin-hero .left-hero .left-hero-tilt .sid
   background-clip: content-box;
   width: 50px;
   height: 50px;
-  line-height: 45px;
+  line-height: 44px;
   padding: 0;
   margin-top: 10px;
   cursor: default;
@@ -790,10 +790,12 @@ html:not([data-device-type="mobile"]) .twin-hero .hero-container .side-container
 }
 
 .workflow-items-right {
-  height: 100%;
   width: 50%;
   position: absolute;
   right: 0;
+  top:50%;
+  transform: translateY(-50%);
+  text-align: right;
 }
 
 @keyframes rotateInRight {
@@ -829,34 +831,68 @@ html:not([data-device-type="mobile"]) .twin-hero .hero-container .side-container
 }
 
 .workflow-items-right .workflow-item, .workflow-items-left .workflow-item {
-  height: 75px;
-  width: 75px;
+  width: 13%;
+  position: relative;
   border: 3px solid #fff;
   display: inline-block;
   border-radius: 100%;
   color: #fff;
-  line-height: 75px;
   text-align: center;
   font-size: 30px;
+}
+
+.workflow-items-left .workflow-item {
+  margin-left: 10%;
+}
+
+.workflow-items-right .workflow-item::before, .workflow-items-left .workflow-item::before {
+  content: "";
+  padding-top: 100%;
+  display: block;
+}
+
+.workflow-items-right .workflow-item i, .workflow-items-left .workflow-item i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.workflow-items-right .workflow-item span, .workflow-items-left .workflow-item span {
+  position: absolute;
+  bottom: -50%;
+  transform: translateX(-50%);
+}
+
+.workflow-items-right .workflow-item {
+  border: 3px solid #000;
+  color: #000;
+}
+
+.workflow-items-right .workflow-item i {
+  color: #000;
 }
 
 .workflow-items-left .workflow-item.workflow-item--first {
   margin-left: 10rem;
   animation: rotateInRight;
+  animation-delay: 2s;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
-.workflow-items-right .workflow-item:last-of-type {
-  margin-right: 10rem;
-  animation: rotateInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
+.workflow-items-left-container, .workflow-items-right-container {
+  position: relative;
 }
+
+.workflow-items-right-container {
+  text-align: right;
+}
+
 
 .fa15 {
   font-size: 1.5em;
-  padding-top: 1.5rem;
 }
 
 @keyframes fromLeft {
@@ -867,7 +903,19 @@ html:not([data-device-type="mobile"]) .twin-hero .hero-container .side-container
 
   100% {
       opacity: 1;
-      transform: translateX(-.5rem);
+      transform: translateX(-50%);
+  }
+}
+
+@keyframes fromRight {
+  0% {
+      opacity: 0;
+      transform: translateX(10rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateX(-50%);
   }
 }
 
@@ -911,7 +959,7 @@ html:not([data-device-type="mobile"]) .twin-hero .hero-container .side-container
   }
 
   100% {
-      width: 5rem;
+      width: 10%;
   }
 }
 
@@ -925,31 +973,32 @@ html:not([data-device-type="mobile"]) .twin-hero .hero-container .side-container
 
 .workflow-item-text--first {
   animation: fromLeft .5s;
-  animation-delay: 1s;
+  animation-delay: 3s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
 .workflow-item--second {
   animation: fromTop .5s;
-  animation-delay: 2s;
+  animation-delay: 4s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
 .workflow-item--3 {
   animation: fromBottom .5s;
-  animation-delay: 3.5s;
+  animation-delay: 5.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
 .workflow-arrow-right {
   display: inline-block;
-  width: 5rem;
-  height: 8.5rem;
+  width: 10%;
   border-top: 2px solid #fff;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .workflow-arrow-right span {
@@ -960,44 +1009,117 @@ html:not([data-device-type="mobile"]) .twin-hero .hero-container .side-container
   font-size: 14px;
 }
 
+.workflow-arrow-left {
+  display: inline-block;
+  width: 10%;
+  border-top: 2px solid #000;
+  position: absolute;
+  top: 50%;
+  transform:translateX(-100%) translateY(-50%);
+}
+
+.workflow-arrow-left span {
+  color: #000;
+  position: absolute;
+  top: -10px;
+  left: -1px;
+  font-size: 14px;
+}
+
+.workflow-arrow-left.workflow-arrow-left--1 span {
+  animation: show .5s;
+  animation-delay: 3.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-arrow-left.workflow-arrow-left--2 span {
+  animation: show .5s;
+  animation-delay: 5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-arrow-left.workflow-arrow-left--3 span {
+  animation: show .5s;
+  animation-delay: 6.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
 .workflow-arrow-right.workflow-arrow-right--first span {
   animation: show .5s;
-  animation-delay: 1.5s;
+  animation-delay: 3.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
 .workflow-arrow-right.workflow-arrow-right--2 span {
   animation: show .5s;
-  animation-delay: 3s;
+  animation-delay: 5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-arrow-right.workflow-arrow-right--3 span {
+  animation: show .5s;
+  animation-delay: 6.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-arrow-left--1 {
+  animation: width .5s;
+  animation-delay: 3.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-arrow-left--2 {
+  animation: width .5s;
+  animation-delay: 5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-arrow-left--3 {
+  animation: width .5s;
+  animation-delay: 6.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
 .workflow-arrow-right--first {
   animation: width .5s;
-  animation-delay: 1.5s;
+  animation-delay: 3.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
 .workflow-arrow-right--2 {
   animation: width .5s;
-  animation-delay: 3s;
+  animation-delay: 5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-arrow-right--3 {
+  animation: width .5s;
+  animation-delay: 6.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
 .workflow-item-text--second {
   animation: show .5s;
-  animation-delay: 2.5s;
+  animation-delay: 4.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 
 .workflow-item-text--3 {
   animation: show .5s;
-  animation-delay: 4s;
+  animation-delay: 6s;
   animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
@@ -1045,5 +1167,155 @@ html:not([data-device-type="mobile"]) .twin-hero .hero-container .side-container
 }
 
 .Navigation-Anchor.active {
-  background-color: #3cbac4 !important;
+  background-color: black !important;
+}
+
+.workflow-items-right .workflow-item-text--1 {
+  animation: fromRight .5s;
+  animation-delay: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+
+.workflow-items-right .workflow-item {
+  margin-right: 10%;
+}
+
+.workflow-items-right .workflow-item.workflow-item--1 {
+  margin-right: 10rem;
+  animation: rotateInLeft;
+  animation-delay: 2s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-items-right .workflow-item--2 {
+  animation: fromTop .5s;
+  animation-delay: 4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-items-right .workflow-item--3 {
+  animation: fromBottom .5s;
+  animation-delay: 5.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-item-text--2 {
+  animation: show .5s;
+  animation-delay: 4.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-header-left {
+  top: 35%;
+  left: 25%;
+  transform: translateX(-50%);
+  position: absolute;
+  color: white;
+  font-size: 4.5rem;
+}
+
+@keyframes animatedHeaderLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.5);
+    top: 50%;
+    left:50%;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(2);
+    top: 50%;
+    left:50%;
+  }
+
+  100% {  
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    top: 35%;
+    left:25%;
+  }
+}
+
+@keyframes animatedHeaderRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50%) scale(1.5);
+    top: 50%;
+    right:50%;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(50%) scale(2);
+    top: 50%;
+    right:50%;
+  }
+
+  100% {  
+    opacity: 1;
+    transform: translateX(50%) scale(1);
+    top: 35%;
+    right:22.5%;
+  }
+}
+
+.workflow-header-left.workflow-header-left--animated {
+  animation: animatedHeaderLeft 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+.workflow-header-right {
+  top: 35%;
+  right: 22.5%;
+  transform: translateX(50%);
+  position: absolute;
+  color: black;
+  font-size: 4.5rem;
+}
+
+.workflow-header-right.workflow-header-right--animated {
+  animation: animatedHeaderRight 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+footer {
+  height: 7vh;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(182, 182, 184, 0.7), rgba(63, 63, 63, 0.7));
+  border-top: 1px solid white;
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.social-media {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.social-media i {
+  cursor: pointer;
+}
+
+.social-media i:hover {
+  color:rgba(0,156,222,0.7);
+}
+
+.social-media-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
