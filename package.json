@@ -4,8 +4,7 @@
   "private": true,
   "devDependencies": {
     "concurrently": "4.1.0",
-    "node-sass": "^4.11.0",
-    "react-scripts": "^2.1.1"
+    "node-sass": "^4.11.0"
   },
   "dependencies": {
     "autoprefixer-stylus": "0.14.0",
@@ -19,7 +18,8 @@
     "react-transition-group": "^2.2.1",
     "serve": "^10.1.1",
     "stylus": "0.54.5",
-    "swiper": "^4.5.0"
+    "swiper": "^4.5.0",
+    "react-scripts": "^2.1.1"
   },
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css-add/css/style.css -w",
