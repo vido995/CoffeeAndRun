@@ -12,6 +12,9 @@ export function rando(arr) {
 export function andrijana() {
   console.log("Guska mala!");
 }
+export function vido(){
+  console.log("Gusan mali");
+}
 
 export function slugify(text) {
   return text
